@@ -1,0 +1,14 @@
+language: python
+python:
+  - "3.9"
+# command to install dependencies
+install:
+  - pip --version
+  - pip install --upgrade pip
+  - pip install -r requirements.txt
+before_script:
+  - python manage.py migrate
+script:
+  - flake8 .
+#  There are no tests in the current project
+#  - python manage.py test
